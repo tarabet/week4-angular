@@ -1,0 +1,70 @@
+
+    <div class="container" ng-controller="IndexController">
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3 col-sm-push-9">
+                <h3 align=center>Our Lipsmacking Culinary Creations</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a ui-sref="app.dishdetails({ id: dish._id })">
+                            <img class="media-object img-thumbnail" ng-src="{{ dish.image }}" alt="Uthappizza">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">
+                            {{ dish.name }}
+                            <span class="label label-danger">{{ dish.label }}</span>
+                            <span class="badge">{{ dish.price | currency }}</span>
+                        </h2>
+                        <p>{{ dish.description }}</p>
+                        <p><a class="btn btn-primary btn-xs" ui-sref="app.dishdetails({ id: dish._id })">More &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-9 col-sm-push-3">
+                <div class="media">
+                    <div class="media-body">
+                        <h2 class="media-heading">
+                            {{ promotions.name }}
+                            <span class="label label-danger">{{ promotions.label }}</span>
+                            <span class="badge">{{ promotions.price | currency }}</span>
+                        </h2>
+                        <p>{{ promotions.description }}</p>
+                    </div>
+                    <div class="media-right media-middle">
+                        <a href="#">
+                            <img class="media-object img-thumbnail" ng-src="{{ promotions.image }}" alt="This Month's Promotions">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-sm-pull-9">
+                <h3 align=center>This Month's Promotions</h3>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3 col-sm-push-9">
+                <h3 align=center>Meet our Culinary Specialists</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a href="#">
+                            <img class="media-object img-thumbnail" ng-src="{{ leaders.image }}" alt="Alberto Somayya">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">{{ leaders.name }}</h2>
+                        <h4>{{ leaders.designation }}</h4>
+                        <p>{{ leaders.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
