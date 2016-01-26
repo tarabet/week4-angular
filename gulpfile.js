@@ -34,7 +34,7 @@ gulp.task('default', ['clean'], function() {
 });
 
 gulp.task('usemin', ['jshint'], function() {
-    return gulp.src('./app/menu.html')
+    return gulp.src('./app/**/*.html')
         .pipe(usemin({
             css: [minifycss(), rev()],
             js: [ngannotate(), uglify(), rev()]
@@ -42,11 +42,15 @@ gulp.task('usemin', ['jshint'], function() {
         .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('imagemin', function() {
-    return del(['dist/images']), gulp.src('app/images/**.*')
-        .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+gulp.task('imagemin', ['imageDel'], function() {
+        gulp.src('app/images/*')
+        //.pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
         .pipe(gulp.dest('dist/images'))
         .pipe(notify({ message: 'Images task completed!' }));
+});
+
+gulp.task('imageDel', function() {
+    return del(['dist/images']);
 });
 
 gulp.task('copyfonts', ['clean'],  function() {
@@ -75,7 +79,7 @@ gulp.task('browser-sync', ['default'], function() {
 
         server: {
             baseDir: 'dist',
-            index: 'menu.html'
+            index: 'index.html'
         },
 
         reloadDelay: 1000
