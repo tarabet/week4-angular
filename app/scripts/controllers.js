@@ -62,11 +62,11 @@ angular.module('confusionApp')
 
     .controller('FeedbackController', ['$scope', 'feedbackFactory', function($scope, feedbackFactory) {
 
-        $scope.sendFeedback = function($event) {
+        $scope.sendFeedback = function() {
 
             if ($scope.feedback.agree && ($scope.feedback.mychannel == "")) {
                 $scope.invalidChannelSelection = true;
-                $event.preventDefault();
+                //$event.preventDefault(); //Commented as no $event var being provided as argument in original view-files;
                 alert('You must select a channel if you\'ve agreed to be contacted by us!');
             }
             else {
@@ -105,8 +105,6 @@ angular.module('confusionApp')
             function(response) {
                 $scope.message = 'Error: ' + response.status + ' ' + response.statusText;
             });
-
-        $scope.dish = menuFactory.getDishes().get({id: parseInt($stateParams.id,10)});
     }])
 
     .controller('DishCommentController', ['$scope', 'menuFactory', function($scope, menuFactory) {
