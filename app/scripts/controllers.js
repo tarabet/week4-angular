@@ -60,24 +60,35 @@ angular.module('confusionApp')
 
     }])
 
-    .controller('FeedbackController', ['$scope', function($scope) {
+    .controller('FeedbackController', ['$scope', 'feedbackFactory', function($scope, feedbackFactory) {
 
-        $scope.sendFeedback = function() {
-
-            console.log($scope.feedback);
+        $scope.sendFeedback = function($event) {
 
             if ($scope.feedback.agree && ($scope.feedback.mychannel == "")) {
                 $scope.invalidChannelSelection = true;
-                console.log('incorrect');
+                $event.preventDefault();
+                alert('You must select a channel if you\'ve agreed to be contacted by us!');
             }
             else {
-                $scope.invalidChannelSelection = false;
-                $scope.feedback = {mychannel:"", firstName:"", lastName:"", agree:false, email:"" };
-                $scope.feedback.mychannel="";
-                $scope.feedbackForm.$setPristine();
-                console.log($scope.feedback);
+                feedbackFactory.getFeedbacks().save($scope.feedback)
+                    .$promise.then(
+                        function(response){
+                            console.log('Save successful: ', response);
+                        },
+                        function(reject) {
+                            console.log('Error saving feedback: ', reject);
+                        }
+                    );
+                resetForm();
             }
         };
+
+        function resetForm() {
+            $scope.invalidChannelSelection = false;
+            $scope.feedback = {mychannel:"", firstName:"", lastName:"", agree:false, email:"" };
+            $scope.feedback.mychannel="";
+            $scope.feedbackForm.$setPristine();
+        }
     }])
 
     .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
