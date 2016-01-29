@@ -6,7 +6,7 @@
       "image": "images/uthapizza.png",
       "category": "mains",
       "label": "Hot",
-      "price": "4.99",
+      "price": 4.99,
       "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.",
       "comments": [
         {
@@ -38,6 +38,36 @@
           "comment": "It's your birthday, we're gonna party!",
           "author": "25 Cent",
           "date": "2011-12-02T17:57:28.556094Z"
+        },
+        {
+          "rating": 5,
+          "comment": "",
+          "author": "",
+          "date": "2016-01-27T11:11:53.540Z"
+        },
+        {
+          "rating": 5,
+          "comment": "",
+          "author": "",
+          "date": "2016-01-27T11:12:32.395Z"
+        },
+        {
+          "rating": "3",
+          "comment": "Не понравилось!!",
+          "author": "Алекс",
+          "date": "2016-01-27T11:15:38.790Z"
+        },
+        {
+          "rating": 5,
+          "comment": "I liked it very much!",
+          "author": "Alexino",
+          "date": "2016-01-27T11:16:31.965Z"
+        },
+        {
+          "rating": "1",
+          "comment": "Bad comment",
+          "author": "Test Aurthor",
+          "date": "2016-01-28T14:21:10.685Z"
         }
       ]
     },
@@ -47,7 +77,7 @@
       "image": "images/zucchipakoda.png",
       "category": "appetizer",
       "label": "",
-      "price": "1.99",
+      "price": 1.99,
       "description": "Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce",
       "comments": [
         {
@@ -79,6 +109,12 @@
           "comment": "It's your birthday, we're gonna party!",
           "author": "25 Cent",
           "date": "2011-12-02T17:57:28.556094Z"
+        },
+        {
+          "rating": "3",
+          "comment": "Sasha",
+          "author": "Alexander",
+          "date": "2016-01-28T14:20:42.092Z"
         }
       ]
     },

@@ -9,14 +9,14 @@ angular.module('confusionApp', ['ui.router', 'ngResource'])
                 url:'/',
                 views: {
                     'header': {
-                        templateUrl : 'views/header.html',
+                        templateUrl : 'views/header.html'
                     },
                     'content': {
                         templateUrl : 'views/home.html',
                         controller  : 'IndexController'
                     },
                     'footer': {
-                        templateUrl : 'views/footer.html',
+                        templateUrl : 'views/footer.html'
                     }
                 }
 
