@@ -284,6 +284,19 @@
       },
       "comments": "ddd",
       "id": 3
+    },
+    {
+      "mychannel": "tel",
+      "firstName": "Alex",
+      "lastName": "Tar",
+      "agree": true,
+      "email": "rrr@jjf.ru",
+      "tel": {
+        "areaCode": "456",
+        "number": "45465464"
+      },
+      "comments": "AAAA",
+      "id": 4
     }
   ]
 }
